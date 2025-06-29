@@ -1,2 +1,2 @@
 # centralized-session-allocation-dashboard
-Automated Excel dashboard to match student class requests with relevant sessions using keyword-based filters, built for EdTech operations.
+Real-world Excel dashboard for operational efficiency: automated class matching by grade, topic, and language using advanced formulas.
