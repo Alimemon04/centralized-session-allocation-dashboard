@@ -36,3 +36,51 @@ Each topic from the master list is evaluated using a partial keyword match formu
 
 ```excel
 =ARRAYFORMULA(SUM(IFERROR(MATCH("*"&split(TRIM('Search Topic'!$B$3)," ")&"*",D5,0),0)) / COUNTA(split(TRIM('Search Topic'!$B$3)," ")))
+
+```
+### 🔸 Step 3: Filtered Result (Cell A4 in 'Search Topic' Tab)
+Based on Grade and Match %, the following nested IF logic filters the relevant results:
+
+```excel
+=IF(A3="10th CBSE", FILTER(CBSE1!AK2:AN1000, CBSE1!AO2:AO1000 > 0, CBSE1!AO2:AO1000 >= C3), ...)
+```
+This returns:
+
+* Topic Name
+
+* Raw Topic ID
+
+* Video ID
+
+* Match %
+
+
+### 🔸 Step 4: Grade Dropdown Source (Cohort Tab)
+The Grade dropdown in cell A3 on the Search Topic tab is dynamically populated using a helper table from the Cohort tab.
+
+Logic:
+
+* Grade and syllabus (e.g., Grade 7, CBSE) are concatenated to form options like Grade 7-CBSE.
+
+* These values are then referenced in Data Validation for the grade selection.
+
+Formula (used in column F of Cohort tab):
+```excel
+=CONCATenate(E2,"-",A2)
+```
+This keeps the dropdown clean, standardized, and error-free for filtering purposes.
+
+
+📂 Data Structure
+* CBSE (Tab): Master database of all session topics and metadata
+
+* CBSE1 (Tab): Filtered list for each grade, enriched with % match
+
+* Search Topic (Tab): UI for entering search criteria and viewing results
+
+📷 Screenshots
+
+Select Grade, Search Key, and Match %
+
+
+Partial Keyword Match % across grade-specific columns
