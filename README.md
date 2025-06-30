@@ -96,6 +96,9 @@ This keeps the dropdown clean, standardized, and error-free for filtering purpos
 This project heavily uses Google Sheets formulas to calculate keyword match percentages, filter topics dynamically, and manage dropdowns.
 
 You can explore the detailed logic in the [`formulas.md`](documentation/formulas.md) file.
+---
+
+📅 Project Timeline: Built in November 2022
 
 ---
 
